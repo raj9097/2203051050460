@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { createUser } from '../api'; 
+import { useNavigate } from 'react-router-dom';
+import { createUser } from '../api';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +14,7 @@ const Signup = () => {
 
     try {
       await createUser({ email, password });
-      history.push('/login'); // Redirect to login after successful signup
+      navigate('/login'); // Redirect to login after successful signup
     } catch (err) {
       setError('Failed to create an account. Please try again.');
     }
@@ -48,5 +48,3 @@ const Signup = () => {
     </div>
   );
 };
-
-export default Signup;

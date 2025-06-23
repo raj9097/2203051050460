@@ -37,3 +37,13 @@ export const deleteUrl = async (shortCode) => {
     throw error.response ? error.response.data : { message: 'Error deleting URL' };
   }
 };
+
+
+export const createUser = async ({ email, password }) => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/signup`, { email, password });
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : { message: 'Error creating user' };
+  }
+};
