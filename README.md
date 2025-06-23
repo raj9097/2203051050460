@@ -56,7 +56,12 @@ src/
 - **Redirection:** Accessing `/shortCode` in the browser redirects to the original URL.
 
 ## Logging
+<div> <img src="" width="400" height="200" />
+<img src="" width="400" height="200" />
+</div>
+<div> <img src="" width="400" height="200" />
 
+</div>
 User actions and errors are logged using a custom hook (`useLogger`). This can be extended to send logs to a backend or analytics service.
 
 ## Error Handling
