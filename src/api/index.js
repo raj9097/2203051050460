@@ -38,12 +38,20 @@ export const deleteUrl = async (shortCode) => {
   }
 };
 
-
 export const createUser = async ({ email, password }) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/signup`, { email, password });
     return response.data;
   } catch (error) {
     throw error.response ? error.response.data : { message: 'Error creating user' };
+  }
+};
+
+export const redirectToOriginalUrl = async (shortCode) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/redirect/${shortCode}`);
+    window.location.href = response.data.originalUrl;
+  } catch (error) {
+    throw error.response ? error.response.data : { message: 'Redirect error' };
   }
 };

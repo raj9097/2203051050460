@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { createUser } from '../api';
 import './Signup.css';
 
-
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -50,3 +49,5 @@ const Signup = () => {
     </div>
   );
 };
+
+export default Signup;
